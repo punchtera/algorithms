@@ -1,0 +1,31 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "A default project to start practicing algorithms",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/punchtera/algorithms.git"
+  },
+  "keywords": [
+    "algorithms",
+    "typescript",
+    "jest"
+  ],
+  "author": "punchtera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/punchtera/algorithms/issues"
+  },
+  "homepage": "https://github.com/punchtera/algorithms#readme",
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "jest": "^27.4.5",
+    "ts-jest": "^27.1.2",
+    "typescript": "^4.5.4"
+  }
+}
