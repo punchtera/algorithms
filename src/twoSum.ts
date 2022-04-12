@@ -17,7 +17,7 @@ function naiveTwoSum(arr: number[], target: number) {
 function setTwoSum(arr: number[], target: number) {
     const setToEval = new Set(arr)
 
-    for (let el of setToEval) {
+    for (let el of arr) {
         if (setToEval.has(target - el)) {
             return true
         }
