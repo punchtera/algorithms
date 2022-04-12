@@ -1,6 +1,6 @@
-import { setTwoSum } from "../src/twoSum";
+import { getTwoSum } from "../src/getTwoSum";
 
-describe("test add function", () => {
+describe("test getTwoSum basic function", () => {
 
     // Ask if the array is sorted.
     // Is there a constraint in memory usage?
@@ -11,7 +11,7 @@ describe("test add function", () => {
         const givenArr = [3, 1, 5, 2, 9]
         const givenTarget = 7
 
-        expect(setTwoSum(givenArr, givenTarget)).toBe(true);
+        expect(getTwoSum(givenArr, givenTarget)).toBe(true);
     });
 
     it("should return false as none of the pairs inside the array return 1", () => {
@@ -19,7 +19,7 @@ describe("test add function", () => {
         const givenTarget = 1
         const givenArr = [3, 1, 5, 2, 9]
 
-        expect(setTwoSum(givenArr, givenTarget)).toBe(false);
+        expect(getTwoSum(givenArr, givenTarget)).toBe(false);
     });
 
     it("should return true as none of the pairs inside the array return 7", () => {
@@ -27,7 +27,7 @@ describe("test add function", () => {
         const givenTarget = 7
         const givenArr = [3, 5, 2, -4, 8, 11]
 
-        expect(setTwoSum(givenArr, givenTarget)).toBe(true);
+        expect(getTwoSum(givenArr, givenTarget)).toBe(true);
     });
 
 });

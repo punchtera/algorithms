@@ -14,7 +14,9 @@ function naiveTwoSum(arr: number[], target: number) {
     return false
 }
 
-function setTwoSum(arr: number[], target: number) {
+// This only works if the value that you return is a boolean, if you need the expected pair this would
+// be different
+function getTwoSum(arr: number[], target: number) {
     const setToEval = new Set(arr)
 
     for (let el of arr) {
@@ -25,4 +27,4 @@ function setTwoSum(arr: number[], target: number) {
     return false
 }
 
-export { setTwoSum }
+export { getTwoSum }
