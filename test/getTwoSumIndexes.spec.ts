@@ -7,7 +7,10 @@ describe("test two sum index function", () => {
         const givenArr = [3, 1, 5, 2, 9]
         const givenTarget = 7
 
-        expect(getTwoSumIndexes(givenArr, givenTarget)).toEqual([2, 3]);
+        const res = getTwoSumIndexes(givenArr, givenTarget)
+        console.log('res', res)
+
+        expect(res).toEqual([[2, 3]]);
     });
 
     it("should return [] as none of the pairs inside the array return 1", () => {
