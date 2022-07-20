@@ -1,3 +1,3 @@
-export function calculatePairInteger(arr: [], diff: number): [] {
+export function calculatePairInteger(arr: number[], diff: number): [] {
     return []
 }
