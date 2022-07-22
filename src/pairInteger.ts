@@ -21,5 +21,8 @@ export function calculatePairInteger(arr: number[], diff: number): {}[] {
         }
     }
 
+
+    response.sort((a, b) => Number(Object.keys(a)[0])
+        - Number(Object.keys(b)[0]));
     return response;
 }
