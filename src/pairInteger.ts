@@ -29,8 +29,19 @@ export function calculatePairInteger(arr: number[], diff: number): {}[] {
 
 export function calculatePairIntegerMap(arr: number[], diff: number): {}[] {
 
-    const pairMap = new Map();
+    const pairMap = new Map(arr.map((el, i) => [el, i]));
     const response: {}[] = [];
 
-    return [];
+    for (let index = 0; index < arr.length; index++) {
+        const element = arr[index];
+
+        if (pairMap.has(element - diff)) {
+            response.push({ [element - diff]: element });
+        }
+
+    }
+
+    response.sort((a, b) => Number(Object.keys(a)[0])
+        - Number(Object.keys(b)[0]));
+    return response;
 }
