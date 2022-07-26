@@ -1,4 +1,4 @@
-// The complexity of this function is O(logn) as the value of the internal foreach 
+// The complexity of this function is O(nlogn) as the value of the internal foreach 
 // is decreasing over time because of the external one 
 
 export function calculatePairInteger(arr: number[], diff: number): {}[] {
@@ -25,4 +25,12 @@ export function calculatePairInteger(arr: number[], diff: number): {}[] {
     response.sort((a, b) => Number(Object.keys(a)[0])
         - Number(Object.keys(b)[0]));
     return response;
+}
+
+export function calculatePairIntegerMap(arr: number[], diff: number): {}[] {
+
+    const pairMap = new Map();
+    const response: {}[] = [];
+
+    return [];
 }
