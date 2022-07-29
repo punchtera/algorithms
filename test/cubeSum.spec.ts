@@ -10,7 +10,6 @@ describe("test cubeSum functions", () => {
     beforeEach(() => {
         consoleSpy.mockClear();
     });
-
     // the number of iterations is huge in the brute force so i skip it
     it.skip("call console.log number of times without failure.", () => {
         cubeSumBruteForce();
