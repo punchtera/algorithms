@@ -17,3 +17,26 @@ export function cubeSumBruteForce() {
     }
 }
 
+export function cubeSumOThree() {
+    const limit = 50;
+    for (let indexa = 1; indexa < limit; indexa++) {
+        for (let indexb = 1; indexb < limit; indexb++) {
+            for (let indexc = 1; indexc < limit; indexc++) {
+                const indexaAtThree = Math.pow(indexa, 3);
+                const indexbAtThree = Math.pow(indexb, 3);
+                const indexcAtThree = Math.pow(indexc, 3);
+                const indexdAtThree = indexaAtThree + indexbAtThree - indexcAtThree;
+                const d = Math.pow(indexaAtThree, 1 / 3);
+
+                const beforeEqual = indexaAtThree + indexbAtThree;
+                const afterEqual = indexcAtThree + indexdAtThree;
+
+                if (beforeEqual === afterEqual && 0 <= d && d <= limit) {
+                    console.log(indexa, indexb, indexc, d);
+                    break;
+                }
+            }
+        }
+    }
+}
+
