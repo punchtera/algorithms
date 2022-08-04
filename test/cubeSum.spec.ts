@@ -2,7 +2,7 @@
 // whereas a, b, c, d are positive integers between 1, 1000
 // bonus: show the difference in time after implementing performant function
 
-import { cubeSumBruteForce, cubeSumOThree } from "../src/cubeSum";
+import { cubeSumBruteForce, cubeSumOThree, cubeSumOTwo } from "../src/cubeSum";
 
 describe("test cubeSum functions", () => {
     const consoleSpy = jest.spyOn(console, 'log').mockImplementation();
@@ -22,6 +22,15 @@ describe("test cubeSum functions", () => {
     it("should call cubeSum O(N^3)", () => {
         const expectedNumberOfCalls = 77090;
         cubeSumOThree();
+        expect(console.log).toHaveBeenCalledTimes(expectedNumberOfCalls);
+    });
+
+    beforeEach(() => {
+        consoleSpy.mockClear();
+    });
+    it("should call cubeSum O(N^2)", () => {
+        const expectedNumberOfCalls = 1213;
+        cubeSumOTwo();
         expect(console.log).toHaveBeenCalledTimes(expectedNumberOfCalls);
     });
 });
