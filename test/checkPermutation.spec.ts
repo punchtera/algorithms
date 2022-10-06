@@ -1,5 +1,10 @@
 import { checkPermutation } from "../src/checkPermutation";
 describe("checkPermutation", () => {
+  it("should return false for comparing two strings that are from a different length", () => {
+    const givenFirstString = "dana";
+    const givenSecondString = "danaa";
+    expect(checkPermutation(givenFirstString, givenSecondString)).toBe(false);
+  });
   it("should return false for comparing two strings that are not a permutation between them", () => {
     const givenFirstString = "dana";
     const givenSecondString = "juan";

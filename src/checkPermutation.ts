@@ -12,10 +12,16 @@ export function checkPermutation(a: string, b: string): boolean {
   }
 
   for (let i = 0; i < b.length; i++) {
-    const char = a[i];
+    const char = b[i];
+    const j = res.indexOf(char);
 
-    
-    
+    if (j === -1) {
+      return false;
+    }
+
+    res = res.slice(0, j) + res.slice(j + 1);
+    console.log("res : ", res);
   }
-  return false;
+
+  return true;
 }
