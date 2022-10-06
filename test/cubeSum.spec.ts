@@ -5,32 +5,32 @@
 import { cubeSumBruteForce, cubeSumOThree, cubeSumOTwo } from "../src/cubeSum";
 
 describe("test cubeSum functions", () => {
-    const consoleSpy = jest.spyOn(console, 'log').mockImplementation();
+  const consoleSpy = jest.spyOn(console, "log").mockImplementation();
 
-    beforeEach(() => {
-        consoleSpy.mockClear();
-    });
-    // the number of iterations is huge in the brute force so i skip it
-    it.skip("call console.log number of times without failure.", () => {
-        cubeSumBruteForce();
-        expect(console.log).toHaveBeenCalled();
-    });
+  beforeEach(() => {
+    consoleSpy.mockClear();
+  });
+  // the number of iterations is huge in the brute force so i skip it
+  it.skip("call console.log number of times without failure.", () => {
+    cubeSumBruteForce();
+    expect(console.log).toHaveBeenCalled();
+  });
 
-    beforeEach(() => {
-        consoleSpy.mockClear();
-    });
-    it("should call cubeSum O(N^3)", () => {
-        const expectedNumberOfCalls = 77090;
-        cubeSumOThree();
-        expect(console.log).toHaveBeenCalledTimes(expectedNumberOfCalls);
-    });
+  beforeEach(() => {
+    consoleSpy.mockClear();
+  });
+  it("should call cubeSum O(N^3)", () => {
+    const expectedNumberOfCalls = 77090;
+    cubeSumOThree();
+    expect(console.log).toHaveBeenCalledTimes(expectedNumberOfCalls);
+  });
 
-    beforeEach(() => {
-        consoleSpy.mockClear();
-    });
-    it("should call cubeSum O(N^2)", () => {
-        const expectedNumberOfCalls = 1213;
-        cubeSumOTwo();
-        expect(console.log).toHaveBeenCalledTimes(expectedNumberOfCalls);
-    });
+  beforeEach(() => {
+    consoleSpy.mockClear();
+  });
+  it("should call cubeSum O(N^2)", () => {
+    const expectedNumberOfCalls = 1213;
+    cubeSumOTwo();
+    expect(console.log).toHaveBeenCalledTimes(expectedNumberOfCalls);
+  });
 });

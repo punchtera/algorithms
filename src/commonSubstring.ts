@@ -1,17 +1,13 @@
 function commonSubstring(a: string, b: string) {
-    let biggerIndex = Number.MIN_SAFE_INTEGER
-    
-    if(a.length > b.length){
+  let biggerIndex = Number.MIN_SAFE_INTEGER;
 
-    }
+  if (a.length > b.length) {
+  }
 
-    if(b.length > a.length){
+  if (b.length > a.length) {
+  }
 
-    }
-
-    return 3;
+  return 3;
 }
 
-export { commonSubstring }
-
-
+export { commonSubstring };
