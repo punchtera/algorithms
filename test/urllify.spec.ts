@@ -5,8 +5,10 @@
 import { urllify } from "../src/urllify";
 
 describe("test urllify functions", () => {
-  const givenUrl = "Mr Jhon Smith     ";
-  const givenLength = 13;
-  const urlifYUrl = urllify(givenUrl, givenLength);
-  expect(urlifYUrl).toEqual("Mr%20Jhon%20Smith");
+  it("happy path with end spaces", () => {
+    const givenUrl = "Mr Jhon Smith     ";
+    const givenLength = 13;
+    const urlifYUrl = urllify(givenUrl, givenLength);
+    expect(urlifYUrl).toEqual("Mr%20Jhon%20Smith");
+  });
 });
