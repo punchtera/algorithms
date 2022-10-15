@@ -3,5 +3,7 @@
 // given 2 strings, write a function to check if they are one edit away.
 
 export function isOneEditAway(firstString: string, secondString: string) {
+  console.log("firstString", firstString);
+  console.log("secondString", secondString);
   return false;
 }
