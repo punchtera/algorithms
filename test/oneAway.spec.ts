@@ -11,7 +11,7 @@ describe("test oneAway functions", () => {
 
   it("should return true as there is one insert away", () => {
     const givenFirstString = "pales";
-    const givenSecondString = "ple";
+    const givenSecondString = "pale";
 
     const result = isOneEditAway(givenFirstString, givenSecondString);
     expect(result).toEqual(true);
