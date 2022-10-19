@@ -20,7 +20,6 @@ export function checkPermutation(a: string, b: string): boolean {
     }
 
     res = res.slice(0, j) + res.slice(j + 1);
-    console.log("res : ", res);
   }
 
   return true;
