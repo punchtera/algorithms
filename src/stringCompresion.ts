@@ -4,5 +4,22 @@
 // assumption: the string has only uppercase and lowecase letters (A-Z)(a-z).
 
 export function compressString(stringOne: string): string {
-  return " ";
+  let result = "";
+  let numberOfTimes = 1;
+  for (let i = 0; i < stringOne.length; i++) {
+    const character = stringOne[i];
+    const followingCharacter = stringOne[i + 1];
+
+    if (character == followingCharacter) {
+      numberOfTimes += 1;
+    } else {
+      result += `${character}${numberOfTimes}`;
+      numberOfTimes = 1;
+    }
+  }
+
+  if (result.length > stringOne.length) {
+    return stringOne;
+  }
+  return result;
 }

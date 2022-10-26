@@ -7,4 +7,10 @@ describe("test stringCompresion functions", () => {
     const result = compressString(givenString);
     expect(result).toEqual("a2b1c5a3");
   });
+  it("should return the original string as it is bigger", () => {
+    const givenString = "abcdefg";
+
+    const result = compressString(givenString);
+    expect(result).toEqual("abcdefg");
+  });
 });
