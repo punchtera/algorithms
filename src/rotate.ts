@@ -3,5 +3,11 @@
 // [1, 15]
 
 export function rotateMatrix90Degrees(matrix: number[][]): number[][] {
+  
+  const translatedLength = matrix.length;
+  const traslatedMatrix = [[]];
+  for (let i = 0; i < matrix.length; i++) {
+    const row = matrix[i];
+  }
   return [[]];
 }
