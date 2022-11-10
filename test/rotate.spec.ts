@@ -29,7 +29,7 @@ describe("test rotate matrix functions", () => {
     expect(isMatrixEqualToResult).toBe(true);
   });
 
-  it.skip("should return the matrix rotated 90 degrees", () => {
+  it("should return the matrix rotated 90 degrees", () => {
     const givenMatrix = [
       [8, 3, 2],
       [10, 4, 1],

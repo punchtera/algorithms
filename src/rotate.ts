@@ -22,10 +22,9 @@ export function rotateMatrix90Degrees(matrix: number[][]): number[][] {
       Number(rowElement);
   }
 
-  for (let k = 1; k < translatedLength; k++) {
-    const columnElement = Number(matrix[translatedLength - 1][0]);
-    translatedMatrix[0][translatedLength - 1 - k] =
-      Number(columnElement);
+  for (let k = translatedLength - 2; k >= 0; k--) {
+    const columnElement = Number(matrix[translatedLength - 1][k]);
+    translatedMatrix[k][0] = Number(columnElement);
   }
 
   console.log("translated: ", JSON.stringify(translatedMatrix));
