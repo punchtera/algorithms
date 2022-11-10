@@ -4,10 +4,27 @@
 
 export function rotateMatrix90Degrees(matrix: number[][]): number[][] {
   const translatedLength = matrix.length;
-  const traslatedMatrix = [...Array(translatedLength).fill([])]; 
- 
+
+  const translatedMatrix: number[][] = []
   for (let i = 0; i < matrix.length; i++) {
-    const row = matrix[i];
+    const element = [];
+    for (let j = 0; j < element.length; j++) {
+      element.push(0);      
+    }
+    translatedMatrix.push(element);
   }
-  return traslatedMatrix;
+  
+  console.log("translated default: ", JSON.stringify(translatedMatrix));
+
+  for (let i = 0; i < translatedLength; i++) {
+    const columnElement = Number(matrix[0][i]);
+    translatedMatrix[i][translatedLength - 1] = Number(columnElement);
+  }
+
+  for (let j = 0; j < translatedLength - 1; j++) {
+    const columnElement = Number(matrix[j])  
+  }
+
+  console.log("translated: ", JSON.stringify(translatedMatrix));
+  return translatedMatrix;
 }
