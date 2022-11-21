@@ -40,7 +40,7 @@ export function rotateMatrix90Degrees(matrix: number[][]): number[][] {
 
   for (let m = translatedLength - 2; m >= 1; m--) {
     const rowElement = Number(matrix[m][0]);
-    translatedMatrix[0][m] = Number(rowElement);
+    translatedMatrix[0][translatedLength - m - 1] = Number(rowElement);
   }
 
   // After rotating the edges check if the count is complete, if not
@@ -49,6 +49,5 @@ export function rotateMatrix90Degrees(matrix: number[][]): number[][] {
     translatedMatrix[1][1] = matrix[1][1];
   }
 
-  console.log('1', translatedMatrix);
   return translatedMatrix;
 }
