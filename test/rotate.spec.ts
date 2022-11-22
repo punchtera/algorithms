@@ -1,11 +1,38 @@
 import { rotateMatrix90Degrees } from "../src/rotate";
 
 function arrayEquals(a: number[], b: number[]) {
-  return a.length === b.length && a.every((val, index) => val === b[index]);
+  let isArrayEqual = true;
+
+  if (a.length !== b.length) {
+    return false;
+  }
+
+  a.forEach((val, index) => {
+    console.log("val", val);
+    if (val !== b[index]) {
+      isArrayEqual = false;
+    }
+  });
+
+  return isArrayEqual;
+}
+
+function isMatrixEqual(matrix: number[][], givenMatrix: number[][]): Boolean {
+  let isMatrixEqual = true;
+  matrix.forEach((rowResult, index) => {
+    console.log("rowResult", rowResult);
+    console.log("rowResultPair", givenMatrix[index]);
+    const isArrayEqual = arrayEquals(rowResult, givenMatrix[index]);
+    console.log("isArrayEqual", isArrayEqual);
+    if (isArrayEqual === false) {
+      isMatrixEqual = false;
+    }
+  });
+  return isMatrixEqual;
 }
 
 describe("test rotate matrix functions", () => {
-  it.skip("should return the squared 4X4 matrix rotated 90 degrees", () => {
+  it("should return the squared 4X4 matrix rotated 90 degrees", () => {
     const givenMatrix = [
       [8, 3, 2, 4],
       [5, 8, 6, 1],
@@ -22,14 +49,11 @@ describe("test rotate matrix functions", () => {
 
     const result = rotateMatrix90Degrees(givenMatrix);
 
-    result.every((rowResult, index) =>
-      arrayEquals(rowResult, expectedResult[index])
-    );
-    const isMatrixEqualToResult = true;
-    expect(isMatrixEqualToResult).toBe(true);
+    const isThisMatrixEqual = isMatrixEqual(result, expectedResult);
+    expect(isThisMatrixEqual).toBe(true);
   });
 
-  it("should return the matrix rotated 90 degrees", () => {
+  it.skip("should return the matrix rotated 90 degrees", () => {
     const givenMatrix = [
       [8, 3, 2],
       [10, 4, 1],
@@ -44,14 +68,11 @@ describe("test rotate matrix functions", () => {
 
     const result = rotateMatrix90Degrees(givenMatrix);
 
-    result.every((rowResult, index) =>
-      arrayEquals(rowResult, expectedResult[index])
-    );
-    const isMatrixEqualToResult = true;
-    expect(isMatrixEqualToResult).toBe(true);
+    const isThisMatrixEqual = isMatrixEqual(result, expectedResult);
+    expect(isThisMatrixEqual).toBe(true);
   });
 
-  it("should return the square matrix rotated 90 degrees", () => {
+  it.skip("should return the square matrix rotated 90 degrees", () => {
     const givenMatrix = [
       [4, 6],
       [10, 5],
@@ -63,11 +84,8 @@ describe("test rotate matrix functions", () => {
     ];
 
     const result = rotateMatrix90Degrees(givenMatrix);
+    const isThisMatrixEqual = isMatrixEqual(result, expectedResult);
 
-    result.every((rowResult, index) =>
-      arrayEquals(rowResult, expectedResult[index])
-    );
-    const isMatrixEqualToResult = true;
-    expect(isMatrixEqualToResult).toBe(true);
+    expect(isThisMatrixEqual).toBe(true);
   });
 });
