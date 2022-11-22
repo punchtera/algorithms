@@ -7,12 +7,13 @@ function arrayEquals(a: number[], b: number[]) {
     return false;
   }
 
-  a.forEach((val, index) => {
+  for (let index = 0; index < a.length; index++) {
+    const val = a[index];
     console.log("val", val);
     if (val !== b[index]) {
       isArrayEqual = false;
     }
-  });
+  }
 
   return isArrayEqual;
 }
@@ -20,10 +21,7 @@ function arrayEquals(a: number[], b: number[]) {
 function isMatrixEqual(matrix: number[][], givenMatrix: number[][]): Boolean {
   let isMatrixEqual = true;
   matrix.forEach((rowResult, index) => {
-    console.log("rowResult", rowResult);
-    console.log("rowResultPair", givenMatrix[index]);
     const isArrayEqual = arrayEquals(rowResult, givenMatrix[index]);
-    console.log("isArrayEqual", isArrayEqual);
     if (isArrayEqual === false) {
       isMatrixEqual = false;
     }
@@ -53,7 +51,7 @@ describe("test rotate matrix functions", () => {
     expect(isThisMatrixEqual).toBe(true);
   });
 
-  it.skip("should return the matrix rotated 90 degrees", () => {
+  it("should return the matrix rotated 90 degrees", () => {
     const givenMatrix = [
       [8, 3, 2],
       [10, 4, 1],
@@ -72,7 +70,7 @@ describe("test rotate matrix functions", () => {
     expect(isThisMatrixEqual).toBe(true);
   });
 
-  it.skip("should return the square matrix rotated 90 degrees", () => {
+  it("should return the square matrix rotated 90 degrees", () => {
     const givenMatrix = [
       [4, 6],
       [10, 5],
