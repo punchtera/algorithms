@@ -9,7 +9,6 @@ function arrayEquals(a: number[], b: number[]) {
 
   for (let index = 0; index < a.length; index++) {
     const val = a[index];
-    console.log("val", val);
     if (val !== b[index]) {
       isArrayEqual = false;
     }
