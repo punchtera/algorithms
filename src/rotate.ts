@@ -47,6 +47,26 @@ export function rotateMatrix90Degrees(matrix: number[][]): number[][] {
   // prepare submatrix and call recursevely
   if (numberOfElements - elementCount - 1 === 1) {
     translatedMatrix[1][1] = matrix[1][1];
+  } else {
+
+    // This could be improved to make it recursive not 
+    // just for 4*4 matrix
+    const subMatrix: number[][] = [];
+    const subMatrixLength = matrix.length - 1;
+    for (let z = 1; z < subMatrixLength; z++) {
+      const subRow = matrix[z].slice(1, subMatrixLength);
+      subMatrix.push(subRow);
+    }
+    const innerMatrixRotated: number[][] = rotateMatrix90Degrees(subMatrix);
+
+    for (let z = 0; z < innerMatrixRotated.length; z++) {
+      const newRow = [
+        translatedMatrix[z+1][0],
+        ...innerMatrixRotated[z],
+        translatedMatrix[z+1][translatedMatrix.length - 1],
+      ];
+      translatedMatrix[z + 1] = newRow;
+    }
   }
 
   return translatedMatrix;
