@@ -8,4 +8,12 @@ describe("test commonSubstring function", () => {
     const expectedCommonSubstring = "GORI";
     expect(commonSubstring(a, b)).toBe(expectedCommonSubstring.length);
   });
+
+  it("should return 3 as a result from 'TON' length", () => {
+    const a = "PAKETONSINO";
+    const b = "TONTARAN";
+
+    const expectedCommonSubstring = "TON";
+    expect(commonSubstring(a, b)).toBe(expectedCommonSubstring.length);
+  });
 });
