@@ -46,12 +46,11 @@ describe("test rotate matrix functions", () => {
 
     const result = resetRowColumnIf0(givenMatrix);
 
-    console.log("result", result);
     const isThisMatrixEqual = isMatrixEqual(result, expectedResult);
     expect(isThisMatrixEqual).toBe(true);
   });
 
-  it.skip("should return the squared 4X5 matrix with reset values", () => {
+  it("should return the squared 4X5 matrix with reset values", () => {
     const givenMatrix = [
       [8, 3, 2, 4, 5],
       [5, 8, 6, 1, 0],
@@ -61,19 +60,18 @@ describe("test rotate matrix functions", () => {
 
     const expectedResult = [
       [8, 3, 0, 4, 0],
-      [5, 8, 0, 1, 0],
+      [0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0],
       [1, 3, 0, 5, 0],
     ];
 
     const result = resetRowColumnIf0(givenMatrix);
 
-    console.log("result", result);
     const isThisMatrixEqual = isMatrixEqual(result, expectedResult);
     expect(isThisMatrixEqual).toBe(true);
   });
 
-  it.skip("should return the matrix the same", () => {
+  it("should return the matrix the same", () => {
     const givenMatrix = [
       [8, 3, 2],
       [10, 4, 1],
