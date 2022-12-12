@@ -3,7 +3,7 @@
 // only one call to isSubstring
 
 function isSubString(s1: string, s2: string): boolean {
-  return false;
+  return s2.indexOf(s1) !== -1;
 }
 
 export function isStringRotated(s1: string, s2: string): boolean {
