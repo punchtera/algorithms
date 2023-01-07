@@ -24,4 +24,4 @@ function getTwoSum(arr: number[], target: number) {
   return false;
 }
 
-export { getTwoSum };
+export { getTwoSum, naiveTwoSum };

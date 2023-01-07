@@ -1,8 +1,8 @@
 /**
  * Function that given two strings, decides if one is a permutation of the other.
- * @param    {String} a    firstString
- * @param    {String} b    secondString
- * @return   {Boolean}      result of algoritm if true or false
+ * @param    {string} a   firstString
+ * @param    {string} b   secondString
+ * @return   {boolean}    result of algoritm if true or false
  */
 export function checkPermutation(a: string, b: string): boolean {
   let res = a;

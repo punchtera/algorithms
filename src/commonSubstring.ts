@@ -1,4 +1,10 @@
-function commonSubstring(a: string, b: string) {
+/**
+ * Function that given two strings, returns the length of the biggest substring.
+ * @param    {string} a   firstString
+ * @param    {string} b   secondString
+ * @return   {number}     length of the biggest substring
+ */
+function commonSubstring(a: string, b: string): number {
   let biggerIndex = Number.MIN_SAFE_INTEGER;
 
   const setSubStrings = new Set();

@@ -2,7 +2,11 @@
 // For example, the string aabcccccaaa would become a2b1c5a3. if the "compressed" would not become
 // smaller than the original string, your method should return the original string.
 // assumption: the string has only uppercase and lowecase letters (A-Z)(a-z).
-
+/**
+ * Function that compress a given string based on occurrence.
+ * @param    {string} stringOne   firstString
+ * @return   {string}             the compressed string
+ */
 export function compressString(stringOne: string): string {
   let result = "";
   let numberOfTimes = 1;
