@@ -1,5 +1,4 @@
 // Determine if a string has all unique characters, what if you cannot use additional data structures?
-
 /**
  * Function that determines if a string has all unique characters.
  * @param    {String} testWord   the word to test

@@ -1,8 +1,13 @@
 // There are three types of edits that can be performed on strings:
 // insert a character, remove a character or replace a character.
 // given 2 strings, write a function to check if they are one edit away.
-
-export function isOneEditAway(firstString: string, secondString: string) {
+/**
+ * Function that determines if a string is one operation away on editing.
+ * @param    {string} firstString     the word to test
+ * @param    {string} secondString    the comparison word to test
+ * @return   {boolean}                is the string one operation away the result?
+ */
+export function isOneEditAway(firstString: string, secondString: string):boolean {
   const testCharsMap = new Map();
 
   for (const char of firstString) {
