@@ -24,4 +24,8 @@ export class LinkedList {
         const headNode = new LinkedListNode(headValue);
         this.head = headNode;
     }
+
+    removeDuplicates() {
+        return false;
+    }
 }
