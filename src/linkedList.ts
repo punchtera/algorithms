@@ -40,18 +40,19 @@ export class LinkedList {
         let pointer: LinkedListNode | null = this.head;
 
         const keyTrackObj: {[k: number]: number} = {};
-        let isAnyElementDuplicate = false
+        let isAnyElementDuplicate = false;
+
         while(pointer !== null){
             let pointerValue: number = pointer.value;
             if(!(pointerValue in keyTrackObj)){
-                keyTrackObj[pointerValue] = pointerValue
+                keyTrackObj[pointerValue] = pointerValue;
                 isAnyElementDuplicate = true;
+                let nextNode = pointer.next && pointer.next;
+                pointer.next = nextNode && nextNode.next;
                 break;
             } 
             pointer =  pointer.next;
         }
-
-        console.log('keyTrackObj', keyTrackObj)
         return isAnyElementDuplicate;
     }
 }
