@@ -15,6 +15,10 @@ class LinkedListNode {
         }
         n.next = newLinkListNode;
     }
+
+    showValues(){
+
+    }
 }
 
 export class LinkedList {
@@ -26,6 +30,21 @@ export class LinkedList {
     }
 
     removeDuplicates() {
-        return false;
+        let pointer: LinkedListNode | null = this.head;
+
+        const keyTrackObj: {[k: number]: number} = {};
+        let isAnyElementDuplicate = false
+        while(pointer !== null){
+            let pointerValue: number = pointer.value;
+            if(!(pointerValue in keyTrackObj)){
+                keyTrackObj[pointerValue] = pointerValue
+                isAnyElementDuplicate = true;
+                break;
+            } 
+            pointer =  pointer.next;
+        }
+
+        console.log('keyTrackObj', keyTrackObj)
+        return isAnyElementDuplicate;
     }
 }
