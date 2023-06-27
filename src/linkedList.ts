@@ -15,10 +15,6 @@ class LinkedListNode {
         }
         n.next = newLinkListNode;
     }
-
-    showValues(){
-
-    }
 }
 
 export class LinkedList {
@@ -27,6 +23,17 @@ export class LinkedList {
     constructor(headValue: number) {
         const headNode = new LinkedListNode(headValue);
         this.head = headNode;
+    }
+
+    showValues(){
+        let n: LinkedListNode | null = this.head;
+
+        console.log('start print');
+        while (n != null) {
+            console.log(`Node Value - ${n.value}`);
+            n = n.next;
+        }
+        console.log('finish print');
     }
 
     removeDuplicates() {
