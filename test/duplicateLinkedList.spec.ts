@@ -1,13 +1,13 @@
 import { LinkedList } from "../src/linkedList";
 
 describe("test the linked list implementation and the duplication algorith", () => {
-  it.skip("should create a linked list", () => {
+  it("should create a linked list", () => {
     const linkedList = new LinkedList(5);
 
     expect(linkedList.head).toBeTruthy();
   });
 
-  it.skip("should test if the result of removing duplicates from a linkedlist and return true", () => {
+  it("should test if the result of removing duplicates from a linkedlist and return true", () => {
     const linkedList = new LinkedList(5);
 
     linkedList.head.appendToTail(5);
@@ -24,7 +24,6 @@ describe("test the linked list implementation and the duplication algorith", () 
     linkedList.head.appendToTail(3);
 
     expect(linkedList.removeDuplicates()).toEqual(false);
-    linkedList.showValues();
     expect(linkedList.getLength()).toEqual(3);
   })
 });
