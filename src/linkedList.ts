@@ -36,6 +36,18 @@ export class LinkedList {
         console.log('finish print');
     }
 
+    getLength(){
+        let n: LinkedListNode | null = this.head;
+        let length = 0;
+
+        while (n != null) {
+            length += 1;
+            n = n.next;
+        }
+
+        return length;
+    }
+
     removeDuplicates() {
         let pointer: LinkedListNode | null = this.head;
 
@@ -47,10 +59,11 @@ export class LinkedList {
             if(!(pointerValue in keyTrackObj)){
                 keyTrackObj[pointerValue] = pointerValue;
                 isAnyElementDuplicate = true;
-                let nextNode = pointer.next && pointer.next;
+                
+                let nextNode = pointer.next;
                 pointer.next = nextNode && nextNode.next;
                 break;
-            } 
+            }
             pointer =  pointer.next;
         }
         return isAnyElementDuplicate;
