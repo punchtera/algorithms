@@ -18,7 +18,7 @@ class LinkedListNode {
 }
 
 export class LinkedList {
-    head: LinkedListNode
+    head: LinkedListNode | null
 
     constructor(headValue: number) {
         const headNode = new LinkedListNode(headValue);
@@ -52,20 +52,30 @@ export class LinkedList {
         let pointer: LinkedListNode | null = this.head;
 
         const keyTrackObj: {[k: number]: number} = {};
+        let noDuplicatesPointer: LinkedListNode | null = null;
         let isAnyElementDuplicate = false;
 
+        let count = 0;
         while(pointer !== null){
             let pointerValue: number = pointer.value;
-            if(!(pointerValue in keyTrackObj)){
+ 
+            if((pointerValue in keyTrackObj)){
+                   
+                let nextNode: LinkedListNode | null = pointer.next;
+                pointer = nextNode;
+               
+                continue;
+            } else {
                 keyTrackObj[pointerValue] = pointerValue;
-                isAnyElementDuplicate = true;
-                
-                let nextNode = pointer.next;
-                pointer.next = nextNode && nextNode.next;
-                break;
+
+                if(noDuplicatesPointer === null){
+                    noDuplicatesPointer = new LinkedListNode(pointerValue);
+                } else {
+                    noDuplicatesPointer.appendToTail(pointerValue)
+                }
             }
-            pointer =  pointer.next;
         }
+        this.head = noDuplicatesPointer;
         return isAnyElementDuplicate;
     }
 }
