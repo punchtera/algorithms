@@ -1,4 +1,4 @@
-import { LinkedList } from "../src/linkedList";
+import { LinkedList } from "../../src/linkedList/linkedList";
 
 describe("test the linked list implementation and the duplication algorith", () => {
   it("should create a linked list", () => {
