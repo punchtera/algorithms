@@ -26,5 +26,5 @@ describe("test the linked list implementation and the duplication algorith", () 
 
     expect(linkedList.removeDuplicates()).toEqual(false);
     expect(linkedList.getLength()).toEqual(3);
-  })
+  });
 });
