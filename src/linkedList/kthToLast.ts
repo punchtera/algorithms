@@ -49,6 +49,16 @@ export class LinkedList {
     }
 
     findkthToLast(index: number): number {
-        return 1;
+        let n: LinkedListNode | null = this.head;
+        let currentIndex = 0;
+        let elements = [];
+
+        while (n != null) {
+            currentIndex += 1;
+            elements.push(n.value);            
+            n = n.next;
+        }
+
+        return elements[elements.length - index];       
     }
 }
