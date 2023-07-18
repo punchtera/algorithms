@@ -24,4 +24,14 @@ describe("test the linked list kthToLast implementation algorith", () => {
 
     expect(linkedList.findkthToLast(3)).toEqual(2);
   });
+
+  it("should producte the expected result using another index", () => {
+    const linkedList = new LinkedList(35);
+
+    linkedList.head?.appendToTail(15);
+    linkedList.head?.appendToTail(4);
+    linkedList.head?.appendToTail(20);
+
+    expect(linkedList.findkthToLast(4)).toEqual(35);
+  });
 });
