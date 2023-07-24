@@ -14,9 +14,9 @@ describe("test the linked list implementation and the delete middle node algorit
     linkedList.head?.appendToTail(3);
     linkedList.head?.appendToTail(2);
 
-    const expectedMiddleNodeValue = 2;
+    const expectedMiddleNodeValue = 5;
+    const expectedLength = 3;
     expect(linkedList.deleteMiddleNode().value).toEqual(expectedMiddleNodeValue);
-    linkedList.showValues();
-    expect(linkedList.getLength()).toEqual(3);
+    expect(linkedList.getLength()).toEqual(expectedLength);
   });
 });
