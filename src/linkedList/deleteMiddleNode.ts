@@ -25,7 +25,7 @@ export class LinkedList {
         this.head = headNode;
     }
 
-    showValues(){
+    showValues() {
         let n: LinkedListNode | null = this.head;
 
         console.log('start print');
@@ -36,7 +36,7 @@ export class LinkedList {
         console.log('finish print');
     }
 
-    getLength(){
+    getLength() {
         let n: LinkedListNode | null = this.head;
         let length = 0;
 
@@ -49,6 +49,27 @@ export class LinkedList {
     }
 
     deleteMiddleNode(): LinkedListNode {
-       return new LinkedListNode(2);
+        const currentLength = this.getLength();
+        let n: LinkedListNode | null = this.head;
+        let prevN: LinkedListNode | null = null;
+
+        const indexToRemove = Math.round(currentLength / 2);
+
+        
+        for (let i = 0; i <= indexToRemove; i++) {
+
+            if (i === indexToRemove - 1 && prevN && n?.next) {
+                prevN.next = n?.next;
+                return n;
+            }
+
+            if (n !== null) {
+                prevN = n;
+                n = n.next;
+            }
+        }
+
+
+        return new LinkedListNode(2);
     }
 }
