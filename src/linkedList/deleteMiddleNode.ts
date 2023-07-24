@@ -48,14 +48,13 @@ export class LinkedList {
         return length;
     }
 
-    deleteMiddleNode(): LinkedListNode {
+    deleteMiddleNode(): LinkedListNode | null {
         const currentLength = this.getLength();
         let n: LinkedListNode | null = this.head;
         let prevN: LinkedListNode | null = null;
 
         const indexToRemove = Math.round(currentLength / 2);
 
-        
         for (let i = 0; i <= indexToRemove; i++) {
 
             if (i === indexToRemove - 1 && prevN && n?.next) {
@@ -69,7 +68,6 @@ export class LinkedList {
             }
         }
 
-
-        return new LinkedListNode(2);
+        return null;
     }
 }
