@@ -28,4 +28,15 @@ describe("test the linked list implementation and the delete middle node algorit
     expect(linkedList.deleteMiddleNode()).toBeNull();
     expect(linkedList.getLength()).toEqual(expectedLength);
   });
+
+  it("should remove the middle exact middle node", () => {
+    const linkedList = new LinkedList(5);
+    linkedList.head?.appendToTail(2);
+    linkedList.head?.appendToTail(1);
+
+    const expectedLength = 2
+    const expectedMiddleNodeValue = 2;
+    expect(linkedList.deleteMiddleNode()?.value).toEqual(expectedMiddleNodeValue);
+    expect(linkedList.getLength()).toEqual(expectedLength);
+  });
 });
