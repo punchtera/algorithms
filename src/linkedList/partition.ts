@@ -1,4 +1,4 @@
-class LinkedListNode {
+export class LinkedListNode {
     next: LinkedListNode | null = null;
     value: number;
 

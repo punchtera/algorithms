@@ -19,8 +19,9 @@ describe("test the linked list implementation and the partition algorith", () =>
       output: 3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8
     */
       const partitionValue = 5;
-      const linkedList = new LinkedList(3);
       const arrayResultsValue = [3, 1, 2, 10, 5, 5, 8];
+
+      const linkedList = new LinkedList(3);
 
       linkedList.head?.appendToTail(5);
       linkedList.head?.appendToTail(8);
@@ -36,12 +37,40 @@ describe("test the linked list implementation and the partition algorith", () =>
 
         let n: LinkedListNode | null = linkedList.head;
         
-        expect(n.value).toEqual(arrayResultsValue[index]);
+        expect(n?.value).toEqual(arrayResultsValue[index]);
         
-        n = n.next;
+        n = n && n.next;
       }
 
       // to ensure it resolves all the nodes.
       expect(true).toEqual(true);
+  });
+
+  it('should create a partition with no existing value within the linkedList', () => {
+    const partitionValue = 5;
+    
+    const linkedList = new LinkedList(3);
+    linkedList.head?.appendToTail(1);
+    linkedList.head?.appendToTail(8);
+    linkedList.head?.appendToTail(3);
+    linkedList.head?.appendToTail(10);
+
+    const arrayResultsValue = [3, 3, 1, 5, 8, 10];
+    const expectedLength = 6;
+    
+    linkedList.partition(partitionValue);
+
+    for (let index = 0; index < 7; index++) {
+      const element = arrayResultsValue[index];
+
+      let n: LinkedListNode | null = linkedList.head;
+      
+      expect(n?.value).toEqual(arrayResultsValue[index]);
+      
+      n = n && n.next;
+    }
+
+    // to ensure it resolves all the nodes.
+    expect(true).toEqual(true);
   });
 });
