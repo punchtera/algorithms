@@ -48,7 +48,7 @@ export class LinkedList {
         return length;
     }
 
-    partition(): null {
+    partition(partitionValue: number): null {
         return null;
     }
 }
